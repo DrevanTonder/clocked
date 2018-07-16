@@ -1,6 +1,6 @@
 <template>
-    <div class="clock has-text-primary">
-        <time class="datetime" :datetime="time">     
+    <div class="main has-text-primary">
+        <time class="main-text" :datetime="time">     
             <h1 class="time is-size-1"><span class="hours">{{ hours }}</span>:<span class="minutes">{{ minutes }}</span>:<span class="seconds">{{ seconds }}</span></h1>
 
             <h2 class="is-size-2">{{ dayAsString }}, {{ date }} {{ monthAsString }}</h2>
@@ -64,20 +64,6 @@ export default {
 </script> 
 
 <style lang="scss">
-.clock {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
-}
-
-.datetime {
-  text-align: center;
-  width: 50%;
-  height: 50%;
-}
-
 .time {
   font-size: 6rem;
 }
