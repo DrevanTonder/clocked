@@ -12,7 +12,7 @@
       <div id="navMenu" class="navbar-menu" :class="{ 'is-active': menuActive } ">
         <div class="navbar-start">
           <router-link class="navbar-item" to="/"><font-awesome-icon icon="clock" />&nbsp; Clock</router-link>
-          <router-link class="navbar-item" to="/about"><font-awesome-icon icon="stopwatch" />&nbsp; Stopwatch</router-link>
+          <router-link class="navbar-item" to="/stopwatch"><font-awesome-icon icon="stopwatch" />&nbsp; Stopwatch</router-link>
         </div>
       </div>
     </nav>

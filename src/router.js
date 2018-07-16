@@ -1,7 +1,7 @@
 import Vue from "vue";
 import Router from "vue-router";
-import Home from "./views/Home.vue";
-import About from "./views/About.vue";
+import Clock from "./views/Clock.vue";
+import Stopwatch from "./views/Stopwatch.vue";
 
 Vue.use(Router);
 
@@ -10,12 +10,12 @@ export default new Router({
     {
       path: "/",
       name: "home",
-      component: Home
+      component: Clock
     },
     {
-      path: "/about",
-      name: "about",
-      component: About
+      path: "/stopwatch",
+      name: "stopwatch",
+      component: Stopwatch
     }
   ]
 });

@@ -1,7 +1,7 @@
 <template>
     <div class="main has-text-primary">
         <time class="main-text" :datetime="time">     
-            <h1 class="time is-size-1"><span class="hours">{{ hours }}</span>:<span class="minutes">{{ minutes }}</span>:<span class="seconds">{{ seconds }}</span></h1>
+            <h1 class="time is-size-1"><span class="time-big">{{ hours }}</span>:<span class="time-big">{{ minutes }}</span>:<span class="time-small">{{ seconds }}</span></h1>
 
             <h2 class="is-size-2">{{ dayAsString }}, {{ date }} {{ monthAsString }}</h2>
         </time>

@@ -11,10 +11,15 @@ import "@/scss/main.scss";
 Vue.use(Buefy);
 
 import { library } from "@fortawesome/fontawesome-svg-core";
-import { faClock, faStopwatch } from "@fortawesome/free-solid-svg-icons";
+import {
+  faClock,
+  faStopwatch,
+  faPlay,
+  faStop
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faClock, faStopwatch);
+library.add(faClock, faStopwatch, faPlay, faStop);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
