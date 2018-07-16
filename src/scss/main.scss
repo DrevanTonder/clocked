@@ -9,7 +9,7 @@ html, * {
     align-items: center;
     justify-content: center;
     height: 100vh;
-  }
+}
   
 .main-text {
     text-align: center;
@@ -19,16 +19,27 @@ html, * {
 
 .time {
     font-size: 6rem;
+    .time-big {
+        font-size: 8rem;
+    }
+    
+    .time-small {
+        font-size: 4rem;
+    }
 }
 
-.time-big {
-    font-size: 8rem;
+@media only screen and (max-width:768px){
+    .time {
+        font-size: 3rem;
+        .time-big {
+            font-size: 4rem;
+        }
+        
+        .time-small {
+            font-size: 2rem;
+        }
+    }
 }
-
-.time-small {
-    font-size: 4rem;
-}
-
 
 $body-background-color: #f8f8f8;
 $body-family: "Avenir", Helvetica, Arial, sans-serif;

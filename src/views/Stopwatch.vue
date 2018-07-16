@@ -7,8 +7,8 @@
             </h1>
           </time>
 
-          <button class="button is-primary is-large is-rounded" @click="toggle()"><font-awesome-icon :icon="toggleIcon" /></button>
-          <button class="button is-primary is-large is-rounded" @click="reset()">Reset</button>
+          <button aria-label="stop/start" role="button" class="button is-primary is-large is-rounded" @click="toggle()"><font-awesome-icon :icon="toggleIcon" /></button>
+          <button aria-label="reset" role="button" class="button is-primary is-large is-rounded" @click="reset()">Reset</button>
         </div>
 
         
