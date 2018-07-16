@@ -1,12 +1,41 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+    <nav class="navbar is-transparent is-fixed-top">
+      <div class="navbar-brand">
+        <div class="navbar-burger burger" data-target="navMenu" @click="toggleMenu()">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+
+      <div id="navMenu" class="navbar-menu" :class="{ 'is-active': menuActive } ">
+        <div class="navbar-start">
+          <router-link class="navbar-item" to="/">Clock</router-link>
+          <router-link class="navbar-item" to="/about">Stopwatch</router-link>
+        </div>
+      </div>
+    </nav>
     <router-view/>
   </div>
 </template>
+
+<script>
+export default {
+  data() {
+    return {
+      menuActive: false
+    };
+  },
+
+  methods: {
+    toggleMenu() {
+      this.menuActive = !this.menuActive;
+    }
+  }
+};
+</script>
+
 
 <style lang="scss">
 #app {
