@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="navbar is-transparent is-fixed-top">
+    <nav class="navbar is-dark is-fixed-top">
       <div class="navbar-brand">
         <div class="navbar-burger burger" data-target="navMenu" @click="toggleMenu()">
           <span></span>
@@ -11,8 +11,8 @@
 
       <div id="navMenu" class="navbar-menu" :class="{ 'is-active': menuActive } ">
         <div class="navbar-start">
-          <router-link class="navbar-item" to="/">Clock</router-link>
-          <router-link class="navbar-item" to="/about">Stopwatch</router-link>
+          <router-link class="navbar-item" to="/"><font-awesome-icon icon="clock" />&nbsp; Clock</router-link>
+          <router-link class="navbar-item" to="/about"><font-awesome-icon icon="stopwatch" />&nbsp; Stopwatch</router-link>
         </div>
       </div>
     </nav>
@@ -35,24 +35,3 @@ export default {
   }
 };
 </script>
-
-
-<style lang="scss">
-#app {
-  font-family: "Avenir", Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
-    }
-  }
-}
-</style>
