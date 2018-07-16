@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="navbar is-dark is-fixed-top">
+    <nav class="navbar is-primary is-fixed-top">
       <div class="navbar-brand">
         <div class="navbar-burger burger" data-target="navMenu" @click="toggleMenu()">
           <span></span>

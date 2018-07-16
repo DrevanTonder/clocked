@@ -1,9 +1,9 @@
 <template>
-    <div class="clock">
+    <div class="clock has-text-primary">
         <time class="datetime" :datetime="time">     
-            <h1 class="time"><span class="hours">{{ hours }}</span>:<span class="minutes">{{ minutes }}</span>:<span class="seconds">{{ seconds }}</span></h1>
+            <h1 class="time is-size-1"><span class="hours">{{ hours }}</span>:<span class="minutes">{{ minutes }}</span>:<span class="seconds">{{ seconds }}</span></h1>
 
-            <h2>{{ dayAsString }}, {{ date }} {{ monthAsString }}</h2>
+            <h2 class="is-size-2">{{ dayAsString }}, {{ date }} {{ monthAsString }}</h2>
         </time>
     </div>    
 </template>
@@ -65,7 +65,6 @@ export default {
 
 <style lang="scss">
 .clock {
-  background-color: #f8f8f8;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -74,7 +73,6 @@ export default {
 }
 
 .datetime {
-  background-color: transparent;
   text-align: center;
   width: 50%;
   height: 50%;

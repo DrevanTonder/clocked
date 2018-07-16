@@ -5,7 +5,8 @@ import store from "./store";
 import "./registerServiceWorker";
 
 import Buefy from "buefy";
-import "buefy/lib/buefy.css";
+
+import "@/scss/main.scss";
 
 Vue.use(Buefy);
 
