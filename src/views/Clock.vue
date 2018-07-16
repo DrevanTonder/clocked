@@ -61,22 +61,4 @@ export default {
     }
   }
 };
-</script> 
-
-<style lang="scss">
-.time {
-  font-size: 6rem;
-}
-
-.hours {
-  font-size: 8rem;
-}
-
-.minutes {
-  font-size: 8rem;
-}
-
-.seconds {
-  font-size: 4rem;
-}
-</style>
+</script>
