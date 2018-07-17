@@ -1,10 +1,10 @@
 <template>
     <time class="time" :datetime="time">
         <h1>
-            <span class="time-big" :contenteditable="edit">{{ time | minutes }}</span>
+            <span class="time-big">{{ time | minutes }}</span>
             <span class="time-small">:</span>
-            <span class="time-big" :contenteditable="edit">{{ time | seconds }}</span>
-            <span class="time-small">:<span :contenteditable="edit">{{ time | milliseconds }}</span></span>
+            <span class="time-big">{{ time | seconds }}</span>
+            <span class="time-small">:{{ time | milliseconds }}</span>
         </h1>
     </time>
 </template>
@@ -16,14 +16,6 @@ export default {
     time: {
       required: true,
       type: Number
-    },
-
-    edit: {
-      required: false,
-      type: Boolean,
-      default() {
-        return false;
-      }
     }
   }
 };
