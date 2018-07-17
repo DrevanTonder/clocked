@@ -8,7 +8,7 @@
           <button v-if="running" aria-label="split" role="button" class="button is-primary is-large is-rounded" @click="split()">Split</button>
         
           <div v-for="split in splits" :key="split">
-            <time-min-sec-ms :time="split" style="font-size: 6px;" />
+            <time-min-sec-ms :time="split" />
           </div>
         </div>
     </div>    
