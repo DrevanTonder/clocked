@@ -1,15 +1,19 @@
 <template>
-    <div class="main has-text-primary">
-        <time class="main-text" :datetime="time">     
-            <h1 class="time is-size-1"><span class="time-big">{{ time | hours }}</span>:<span class="time-big">{{ time | minutes }}</span>:<span class="time-small">{{ time | seconds }}</span></h1>
-
-            <h2 class="is-size-2">{{ time | dayString }}, {{ time | date }} {{ time | monthString }}</h2>
-        </time>
-    </div>    
+  <div class="main has-text-primary">
+    <section class="main-text">
+      <time-date-hr-min-sec :time="time" />
+    </section>
+  </div>    
 </template>
 
 <script>
+import TimeDateHrMinSec from "@/components/TimeDateHrMinSec.vue";
+
 export default {
+  components: {
+    TimeDateHrMinSec
+  },
+
   data() {
     return {
       time: new Date(),
