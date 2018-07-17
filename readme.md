@@ -7,7 +7,7 @@
 User navigates to home page. System shows the current time.
 
 #### Stopwatch - User Story
-User navigates to stopwatch page. User presses Start button. System starts timer and displays elapsed time. User then presses Split button. System records elapsed time. User then presses stop button. System stops pauses timer. User then presses Reset button. System resets time.
+User navigates to stopwatch page. User presses Start button. System starts timer and displays elapsed time. User then presses Split button. System records and displays elapsed time. User then presses stop button. System stops pauses timer. User then presses Reset button. System resets time.
 
 #### Timer - User Story
 User navigates to timer page. User selects amount of time to countdown. User presses Start button. System starts countdown. When countdown ends System notifies user until user acknowledges countdown end by pressing anywhere.
