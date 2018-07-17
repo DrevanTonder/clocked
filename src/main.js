@@ -15,11 +15,12 @@ import {
   faClock,
   faStopwatch,
   faPlay,
-  faStop
+  faStop,
+  faHourglass
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faClock, faStopwatch, faPlay, faStop);
+library.add(faClock, faStopwatch, faPlay, faStop, faHourglass);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
