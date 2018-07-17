@@ -16,8 +16,8 @@ export default {
 
   data() {
     return {
-      time: new Date(),
-      interval: setInterval(() => (this.time = new Date()), 1000)
+      time: Date.now(),
+      interval: setInterval(() => (this.time = Date.now()), 1000)
     };
   },
 
