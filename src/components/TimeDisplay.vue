@@ -1,9 +1,6 @@
 <template>
-  <time class="time" :datetime="time">
-      <span class="time-big">{{ hour }}</span>
-      <span class="time-small">:</span>
-      <span class="time-big">{{ minute }}</span>
-      <span class="time-small">:{{ second }}</span>
+  <time :datetime="time">
+      <b>{{ hour }}:{{ minute }}:{{ second }}</b>
   </time>
 </template>
 

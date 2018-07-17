@@ -1,6 +1,6 @@
 <template>
-  <time class="time" :datetime="time">
-    <h2 class="time-small">{{ dayOfWeek }}, {{ date }} {{ month }}</h2>
+  <time :datetime="time">
+    <p>{{ dayOfWeek }}, {{ date }} {{ month }}</p>
   </time>
 </template>
 
@@ -25,7 +25,7 @@ export default {
     },
 
     month() {
-      return moment(this.time).format("MM");
+      return moment(this.time).format("MMMM");
     }
   }
 };

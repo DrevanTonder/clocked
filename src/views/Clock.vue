@@ -1,10 +1,10 @@
 <template>
-  <div class="main has-text-primary">
-    <section class="main-text">
-      <time-display :time="time" />
-      <date-display :time="time" />
+  <main>
+    <section class="main-content">
+      <time-display class="large-text" :time="time" />
+      <date-display class="large-text" :time="time" />
     </section>
-  </div>    
+  </main>    
 </template>
 
 <script>

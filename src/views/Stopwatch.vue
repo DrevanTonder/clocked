@@ -1,17 +1,17 @@
 <template>
-    <div class="main has-text-primary">
-        <div class="main-text" >     
-          <duration-display :time="elapsedTime" />
+    <main>
+        <section class="main-content" >
+          <duration-display class="large-text" :time="elapsedTime" />
 
           <button aria-label="stop/start" role="button" class="button is-primary is-large is-rounded" @click="toggle()"><font-awesome-icon :icon="toggleIcon" /></button>
           <button v-if="!running" aria-label="reset" role="button" class="button is-primary is-large is-rounded" @click="reset()">Reset</button>
           <button v-if="running" aria-label="split" role="button" class="button is-primary is-large is-rounded" @click="split()">Split</button>
         
           <div v-for="split in splits" :key="split">
-            <time-min-sec-ms :time="split" />
+            <duration-display :time="split" />
           </div>
-        </div>
-    </div>    
+        </section>
+    </main>    
 </template>
 
 <script>
