@@ -1,11 +1,9 @@
 <template>
-    <main>
-        <section class="main-content" >
-            <duration-display class="large-text" :time="timeLeft" />
+  <section class="main-content" >
+    <duration-display :time="timeLeft" />
 
-            <button aria-label="stop/start" role="button" class="button is-primary is-large is-rounded" @click="start()"><font-awesome-icon icon="play" /></button>
-        </section>
-    </main>
+    <button aria-label="stop/start" role="button" class="button is-primary is-large is-rounded" @click="start()"><font-awesome-icon icon="play" /></button>
+  </section>
 </template>
 
 <script>

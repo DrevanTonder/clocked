@@ -1,7 +1,9 @@
 <template>
-  <time :datetime="time">
-    <p>{{ dayOfWeek }}, {{ date }} {{ month }}</p>
-  </time>
+  <span class="tag is-danger"> 
+    <time :datetime="time">
+      {{ dayOfWeek }}, {{ date }} {{ month }}
+    </time>
+  </span>
 </template>
 
 <script>

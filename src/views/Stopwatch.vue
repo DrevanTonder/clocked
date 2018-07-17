@@ -1,17 +1,23 @@
 <template>
-    <main>
-        <section class="main-content" >
-          <duration-display class="large-text" :time="elapsedTime" />
+  <section class="main-content">
+    <duration-display :time="elapsedTime" />
 
-          <button aria-label="stop/start" role="button" class="button is-primary is-large is-rounded" @click="toggle()"><font-awesome-icon :icon="toggleIcon" /></button>
-          <button v-if="!running" aria-label="reset" role="button" class="button is-primary is-large is-rounded" @click="reset()">Reset</button>
-          <button v-if="running" aria-label="split" role="button" class="button is-primary is-large is-rounded" @click="split()">Split</button>
-        
-          <div v-for="split in splits" :key="split">
-            <duration-display :time="split" />
-          </div>
-        </section>
-    </main>    
+    <div class="buttons">
+        <button aria-label="stop/start" role="button" class="button is-primary is-large is-rounded" @click="toggle()">
+          <font-awesome-icon :icon="toggleIcon" />
+        </button>
+        <button v-if="!running" aria-label="reset" role="button" class="button is-primary is-large is-rounded" @click="reset()">
+          Reset
+        </button>
+        <button v-if="running" aria-label="split" role="button" class="button is-primary is-large is-rounded" @click="split()">
+          Split
+        </button>
+    </div>
+
+    <div class="columns is-multiline">
+      <duration-display class="column is-2" v-for="split in splits" :key="split" :time="split" />
+    </div>
+  </section>   
 </template>
 
 <script>

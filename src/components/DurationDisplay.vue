@@ -1,12 +1,14 @@
 <template>
-    <time :datetime="time">
+     <div>
         <h1>
+          <time :datetime="time">
             <span v-if="hours >= 1"><b>{{ hours }}</b>hr </span>
             <span v-if="minutes >= 1"><b>{{ minutes }}</b>m </span>
             <b>{{ seconds }}</b>s
             <b>{{ milliseconds }}</b>ms
+          </time>
         </h1>
-    </time>
+    </div>
 </template>
 
 
@@ -23,7 +25,7 @@ export default {
 
   computed: {
     hours() {
-      return moment.duration(this.time).hours();
+      return Math.floor(moment.duration(this.time).asHours());
     },
 
     minutes() {
@@ -40,3 +42,9 @@ export default {
   }
 };
 </script>
+
+<style lang="scss" scoped>
+b {
+  font-size: 2em;
+}
+</style>

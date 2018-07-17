@@ -1,7 +1,9 @@
 <template>
-  <time :datetime="time">
-      <b>{{ hour }}:{{ minute }}:{{ second }}</b>
-  </time>
+  <span class="tag is-success">
+    <time :datetime="time">
+        {{ hour }}:{{ minute }}:{{ second }}
+    </time>
+  </span>
 </template>
 
 <script>

@@ -1,12 +1,12 @@
 $body-background-color: #f8f8f8;
-$body-family: "Avenir", Helvetica, Arial, sans-serif;
+$body-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 $body-color: #2c2c2c;
 
 // Import Bulma's core
 @import "~bulma/sass/utilities/_all";
 
 // Set your colors
-$primary: #34507a;
+$primary: #4375e2;
 $primary-invert: findColorInvert($primary);
 
 // Setup $colors to use as bulma classes (e.g. 'is-twitter')
@@ -25,20 +25,8 @@ $colors: (
 // Import Bulma and Buefy styles
 @import "~bulma";
 @import "~buefy/src/scss/buefy";
-
-main {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    color: $primary;
-}
   
 .main-content {
-    text-align: center;
-    width: 100%;
-    height: 50%;
     .large-text {
         font-size: 6vw;
     }
