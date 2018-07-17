@@ -23,6 +23,8 @@ library.add(faClock, faStopwatch, faPlay, faStop);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
+import "./filters";
+
 Vue.config.productionTip = false;
 
 new Vue({
