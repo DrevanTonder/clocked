@@ -1,7 +1,7 @@
 <template>
     <div class="main has-text-primary">
         <div class="main-text" >
-            <time-min-sec-ms :time="timeLeft" />
+            <duration-display :time="timeLeft" />
 
             <button aria-label="stop/start" role="button" class="button is-primary is-large is-rounded" @click="start()"><font-awesome-icon icon="play" /></button>
         </div>
@@ -9,7 +9,7 @@
 </template>
 
 <script>
-import TimeMinSecMs from "@/components/TimeMinSecMs.vue";
+import DurationDisplay from "@/components/DurationDisplay.vue";
 
 export default {
   data() {
@@ -21,7 +21,7 @@ export default {
   },
 
   components: {
-    TimeMinSecMs
+    DurationDisplay
   },
 
   computed: {

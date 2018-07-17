@@ -1,7 +1,7 @@
 <template>
     <div class="main has-text-primary">
         <div class="main-text" >     
-          <time-min-sec-ms :time="elapsedTime" />
+          <duration-display :time="elapsedTime" />
 
           <button aria-label="stop/start" role="button" class="button is-primary is-large is-rounded" @click="toggle()"><font-awesome-icon :icon="toggleIcon" /></button>
           <button v-if="!running" aria-label="reset" role="button" class="button is-primary is-large is-rounded" @click="reset()">Reset</button>
@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import TimeMinSecMs from "@/components/TimeMinSecMs.vue";
+import DurationDisplay from "@/components/DurationDisplay.vue";
 
 export default {
   data() {
@@ -33,7 +33,7 @@ export default {
   },
 
   components: {
-    TimeMinSecMs
+    DurationDisplay
   },
 
   computed: {
@@ -67,7 +67,7 @@ export default {
 
       this.interval = setInterval(
         () => (this.elapsedTime = Date.now() - this.startTime),
-        10
+        1
       );
     },
 

@@ -1,17 +1,20 @@
 <template>
   <div class="main has-text-primary">
     <section class="main-text">
-      <time-date-hr-min-sec :time="time" />
+      <time-display :time="time" />
+      <date-display :time="time" />
     </section>
   </div>    
 </template>
 
 <script>
-import TimeDateHrMinSec from "@/components/TimeDateHrMinSec.vue";
+import DateDisplay from "@/components/DateDisplay.vue";
+import TimeDisplay from "@/components/TimeDisplay.vue";
 
 export default {
   components: {
-    TimeDateHrMinSec
+    DateDisplay,
+    TimeDisplay
   },
 
   data() {
