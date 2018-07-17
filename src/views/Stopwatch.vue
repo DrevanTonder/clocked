@@ -3,27 +3,31 @@
         <div class="main-text" >     
           <time :datetime="elapsedTime">
             <h1 class="time is-size-1">
-              <span class="time-big">{{ minutes }}</span>:<span class="time-big">{{ seconds }}</span>:<span class="time-small">{{ milliseconds }}</span>
+              <span class="time-big">{{ elapsedTime | minutes }}</span>:<span class="time-big">{{ elapsedTime | seconds }}</span>:<span class="time-small">{{ elapsedTime | milliseconds }}</span>
             </h1>
           </time>
 
           <button aria-label="stop/start" role="button" class="button is-primary is-large is-rounded" @click="toggle()"><font-awesome-icon :icon="toggleIcon" /></button>
-          <button aria-label="reset" role="button" class="button is-primary is-large is-rounded" @click="reset()">Reset</button>
-        </div>
-
+          <button v-if="!running" aria-label="reset" role="button" class="button is-primary is-large is-rounded" @click="reset()">Reset</button>
+          <button v-if="running" aria-label="split" role="button" class="button is-primary is-large is-rounded" @click="split()">Split</button>
         
+          <div v-for="split in splits" :key="split">
+            <time >
+              <span class="time-small">{{ split | minutes }}</span>:<span class="time-small">{{ split | seconds }}</span>:<span class="time-small">{{ split | milliseconds }}</span>
+            </time>
+          </div>
+        </div>
     </div>    
 </template>
 
 <script>
-import moment from "moment";
-
 export default {
   data() {
     return {
       startTime: null,
       elapsedTime: 0,
       interval: null,
+      splits: [],
       toggleIcon: "play"
     };
   },
@@ -33,16 +37,8 @@ export default {
   },
 
   computed: {
-    minutes() {
-      return moment(this.elapsedTime).format("mm");
-    },
-
-    seconds() {
-      return moment(this.elapsedTime).format("ss");
-    },
-
-    milliseconds() {
-      return moment(this.elapsedTime).format("SS");
+    running() {
+      return this.interval != null;
     }
   },
 
@@ -50,6 +46,7 @@ export default {
     reset() {
       this.startTime = null;
       this.elapsedTime = 0;
+      this.splits = [];
       this.stop();
     },
 
@@ -79,6 +76,10 @@ export default {
 
       clearInterval(this.interval);
       this.interval = null;
+    },
+
+    split() {
+      this.splits.push(this.elapsedTime);
     }
   }
 };
