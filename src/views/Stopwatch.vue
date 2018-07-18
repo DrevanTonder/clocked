@@ -106,7 +106,7 @@ export default {
 
 <style lang="scss">
 .splits {
-  overflow-y: scroll;
+  overflow-y: auto;
   height: 400px;
 }
 </style>
