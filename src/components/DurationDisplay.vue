@@ -3,7 +3,7 @@
     <span v-if="hours >= 1"><b>{{ hours }}</b>hr </span>
     <span v-if="minutes >= 1"><b>{{ minutes }}</b>m </span>
     <b>{{ seconds }}</b>s
-    <b>{{ milliseconds }}</b>ms
+    <span v-if="ms"><b>{{ milliseconds }}</b>ms</span>
   </time>
 </template>
 
@@ -16,6 +16,14 @@ export default {
     time: {
       required: true,
       type: Number
+    },
+
+    ms: {
+      required: false,
+      type: Boolean,
+      default() {
+        return false;
+      }
     }
   },
 
