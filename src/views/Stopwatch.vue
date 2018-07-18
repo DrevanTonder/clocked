@@ -1,23 +1,36 @@
 <template>
-  <section class="main-content">
-    <duration-display :time="elapsedTime" />
-
-    <div class="buttons">
-        <button aria-label="stop/start" role="button" class="button is-primary is-large is-rounded" @click="toggle()">
-          <font-awesome-icon :icon="toggleIcon" />
-        </button>
-        <button v-if="!running" aria-label="reset" role="button" class="button is-primary is-large is-rounded" @click="reset()">
-          Reset
-        </button>
-        <button v-if="running" aria-label="split" role="button" class="button is-primary is-large is-rounded" @click="split()">
-          Split
-        </button>
+  <div class="container">
+    <div class="columns">
+      <div class="column is-6">
+        <h1 class="title">
+          <duration-display :time="elapsedTime" />
+        </h1>
+        <h2 class="subtitle">
+          <div class="buttons">
+            <button aria-label="stop/start" role="button" class="button is-large is-rounded" :class="{ 'is-success': !running, 'is-danger': running }" @click="toggle()">
+              <font-awesome-icon :icon="toggleIcon" />
+            </button>
+            <button aria-label="reset" role="button" class="button is-warning is-large is-rounded" @click="reset()">
+              Reset
+            </button>
+            <button v-if="running" aria-label="lap" role="button" class="button is-success is-large is-rounded" @click="lap()">
+              Lap
+            </button>
+          </div>
+        </h2>
+      </div>
+      <div class="column">
+        <div class="box splits">
+          <ul v-if="laps.length">
+            <li v-for="lap in laps" :key="lap">
+              <duration-display :time="lap" />
+            </li>
+          </ul>
+          <p class="is-size-4" v-else>This is where laps will go.</p>
+        </div>
+      </div>
     </div>
-
-    <div class="columns is-multiline">
-      <duration-display class="column is-2" v-for="split in splits" :key="split" :time="split" />
-    </div>
-  </section>   
+  </div>  
 </template>
 
 <script>
@@ -29,7 +42,7 @@ export default {
       startTime: null,
       elapsedTime: 0,
       interval: null,
-      splits: [],
+      laps: [],
       toggleIcon: "play"
     };
   },
@@ -52,7 +65,7 @@ export default {
     reset() {
       this.startTime = null;
       this.elapsedTime = 0;
-      this.splits = [];
+      this.laps = [];
       this.stop();
     },
 
@@ -84,9 +97,16 @@ export default {
       this.interval = null;
     },
 
-    split() {
-      this.splits.push(this.elapsedTime);
+    lap() {
+      this.laps.push(this.elapsedTime);
     }
   }
 };
 </script>
+
+<style lang="scss">
+.splits {
+  overflow-y: scroll;
+  height: 400px;
+}
+</style>

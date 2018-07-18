@@ -1,14 +1,10 @@
 <template>
-     <div>
-        <h1>
-          <time :datetime="time">
-            <span v-if="hours >= 1"><b>{{ hours }}</b>hr </span>
-            <span v-if="minutes >= 1"><b>{{ minutes }}</b>m </span>
-            <b>{{ seconds }}</b>s
-            <b>{{ milliseconds }}</b>ms
-          </time>
-        </h1>
-    </div>
+  <time :datetime="time">
+    <span v-if="hours >= 1"><b>{{ hours }}</b>hr </span>
+    <span v-if="minutes >= 1"><b>{{ minutes }}</b>m </span>
+    <b>{{ seconds }}</b>s
+    <b>{{ milliseconds }}</b>ms
+  </time>
 </template>
 
 
