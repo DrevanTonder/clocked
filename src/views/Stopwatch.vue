@@ -10,7 +10,7 @@
             <button aria-label="stop/start" role="button" class="button is-large is-rounded" :class="{ 'is-success': !running, 'is-danger': running }" @click="toggle()">
               <font-awesome-icon :icon="toggleIcon" />
             </button>
-            <button aria-label="reset" role="button" class="button is-warning is-large is-rounded" @click="reset()">
+            <button aria-label="reset" role="button" class="button is-info is-large is-rounded" @click="reset()">
               Reset
             </button>
             <button v-if="running" aria-label="lap" role="button" class="button is-success is-large is-rounded" @click="lap()">
