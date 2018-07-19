@@ -17,13 +17,19 @@
         </h2>
       </div>
       <div class="column">
-        <form class="is-flex is-size-3">
-          <input type="number" class="timer-input" min="0" v-model="hours" />
-          hr
-          <input type="number" class="timer-input" max="60" min="0" v-model="minutes" />
-          m
-          <input type="number" class="timer-input" max="60" min="0" v-model="seconds" />
-          s
+        <form class="is-size-3 columns is-desktop">
+          <div class="column">
+            <input type="number" class="timer-input" min="0" v-model="hours" />
+            hr
+          </div>
+          <div class="column">
+            <input type="number" class="timer-input" max="60" min="0" v-model="minutes" />
+            m
+          </div>
+          <div class="column">
+            <input type="number" class="timer-input" max="60" min="0" v-model="seconds" />
+            s
+          </div>
         </form>
       </div>  
     </div>
@@ -82,6 +88,10 @@ export default {
 
   beforeDestroy() {
     clearInterval(this.interval);
+  },
+
+  mounted() {
+    this.timeLeft = this.getTimeFromInputs();
   },
 
   methods: {
