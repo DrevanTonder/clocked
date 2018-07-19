@@ -8,8 +8,6 @@ import Buefy from "buefy";
 
 import "@/scss/main.scss";
 
-import "animate.css/animate.min.css";
-
 Vue.use(Buefy);
 
 import { library } from "@fortawesome/fontawesome-svg-core";
