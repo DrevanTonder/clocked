@@ -8,5 +8,7 @@ require("http")
         file.serve(request, response);
       })
       .resume();
+    // eslint-disable-next-line no-console
+    console.log("Request on: " + request.url);
   })
   .listen(process.env.PORT || 3000);
