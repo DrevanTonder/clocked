@@ -49,13 +49,15 @@
     "ignore": [
       "./dist/**/*"
     ],
-    "*.js": [
-      "vue-cli-service lint",
-      "git add"
-    ],
-    "*.vue": [
-      "vue-cli-service lint",
-      "git add"
-    ]
+    "linters": {
+      "*.js": [
+        "vue-cli-service lint",
+        "git add"
+      ],
+      "*.vue": [
+        "vue-cli-service lint",
+        "git add"
+      ]
+    }
   }
 }
