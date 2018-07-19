@@ -1,14 +1,7 @@
-const server = require("node-static");
-var file = new server.Server("./dist");
+const express = require("express");
+const app = express();
+const path = require("path");
 
-require("http")
-  .createServer(function(request, response) {
-    request
-      .addListener("end", function() {
-        file.serve(request, response);
-      })
-      .resume();
-    // eslint-disable-next-line no-console
-    console.log("Request on: " + request.url);
-  })
-  .listen(process.env.PORT || 3000);
+app.use(express.static(path.join(__dirname, "dist")));
+
+app.listen(process.env.PORT || 3000);
