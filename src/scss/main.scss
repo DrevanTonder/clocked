@@ -22,6 +22,11 @@ $colors: (
     "danger": ($danger, $danger-invert),
 );
 
+$size-small: $size-6;
+$size-normal: $size-5;
+$size-medium: $size-4;
+$size-large: $size-3;
+
 // Import Bulma and Buefy styles
 @import "~bulma/sass/base/all";
 @import "~bulma/sass/grid/columns";
