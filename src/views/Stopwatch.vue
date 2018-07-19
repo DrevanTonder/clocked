@@ -7,10 +7,10 @@
         </h1>
         <h2 class="subtitle">
           <div class="buttons">
-            <button aria-label="stop/start" role="button" class="button is-large is-rounded" :class="{ 'is-success': !running, 'is-danger': running }" @click="toggle()">
+            <button aria-label="stop/start" role="button" class="button is-large is-rounded" :class="{ 'is-success': !running, 'is-info': running }" @click="toggle()">
               <font-awesome-icon :icon="toggleIcon" />
             </button>
-            <button aria-label="reset" role="button" class="button is-info is-large is-rounded" @click="reset()">
+            <button aria-label="reset" role="button" class="button is-danger is-large is-rounded" @click="reset()">
               Reset
             </button>
             <button v-if="running" aria-label="lap" role="button" class="button is-success is-large is-rounded" @click="lap()">
@@ -20,13 +20,13 @@
         </h2>
       </div>
       <div class="column">
+        <p class="help-text">This is where laps will go.	<span class="help-arrow-down" /></p>
         <div class="box splits">
           <ul v-if="laps.length">
             <li v-for="lap in laps" :key="lap">
               <duration-display :time="lap" />
             </li>
           </ul>
-          <p class="is-size-4" v-else>This is where laps will go.</p>
         </div>
       </div>
     </div>

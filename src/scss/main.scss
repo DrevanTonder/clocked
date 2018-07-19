@@ -29,3 +29,20 @@ $colors: (
 html, body {
     overflow: auto;
 }
+
+@import url('https://fonts.googleapis.com/css?family=Indie+Flower');
+
+.help-text {
+    font-family: 'Indie Flower', cursive;
+    font-size: 1.5rem;
+    padding-bottom: .7rem;
+    position: relative;
+}
+
+.help-arrow-down::before {
+    content: "\2935";
+    position: absolute;
+    padding-left: .5rem;
+    font-size: 3rem;
+    top: .200rem;
+}

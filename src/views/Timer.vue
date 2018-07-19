@@ -17,6 +17,7 @@
         </h2>
       </div>
       <div class="column">
+        <p class="has-text-centered help-text">Input your time here.</p>
         <form class="is-size-3 columns is-desktop">
           <div class="column">
             <input type="number" class="timer-input" min="0" v-model="hours" />
