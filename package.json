@@ -4,11 +4,11 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-    "serve": "npx vue-cli-service serve",
-    "build": "npx vue-cli-service build",
-    "lint": "npx vue-cli-service lint",
-    "test:unit": "npx vue-cli-service test:unit",
-    "start": "node index.js"
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint",
+    "test:unit": "vue-cli-service test:unit",
+    "start": "node server.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "1.2.0",
@@ -46,6 +46,9 @@
     "pre-commit": "lint-staged"
   },
   "lint-staged": {
+    "ignore": [
+      "./dist/**/*"
+    ],
     "*.js": [
       "vue-cli-service lint",
       "git add"
