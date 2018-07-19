@@ -27,12 +27,19 @@
         </form>
       </div>  
     </div>
+
+    <b-modal :active.sync="finished" class="has-text-centered" :on-cancel="() => stopAlarm()">
+        <button id="acknowledge-alarm-button" aria-label="acknowledge alarm" role="button" class="animated rubberBand infinite button is-rounded is-success" @click="stopAlarm()">
+          <font-awesome-icon icon="check" />
+        </button>
+    </b-modal>
   </div>
 </template>
 
 <script>
 import moment from "moment";
 import DurationDisplay from "@/components/DurationDisplay.vue";
+import audioURL from "@/assets/timer-alarm.mp3";
 
 export default {
   data() {
@@ -43,7 +50,9 @@ export default {
       interval: null,
       hours: 0,
       minutes: 0,
-      seconds: 10
+      seconds: 10,
+      audio: new Audio(audioURL),
+      finished: false
     };
   },
 
@@ -92,8 +101,9 @@ export default {
     update() {
       this.timeLeft = this.timeToCountdown - (Date.now() - this.countdownStart);
       if (this.timeLeft <= 0) {
+        this.alarmUser();
         this.stop();
-        setTimeout(() => this.reset(), 100);
+        this.reset();
       }
     },
 
@@ -104,6 +114,18 @@ export default {
       this.countdownStart = null;
 
       this.timeLeft = this.getTimeFromInputs();
+    },
+
+    alarmUser() {
+      this.audio.play();
+      this.audio.loop = true;
+      this.finished = true;
+    },
+
+    stopAlarm() {
+      this.audio.pause();
+      this.audio.currentTime = 0;
+      this.finished = false;
     },
 
     getTimeFromInputs() {
@@ -141,5 +163,16 @@ export default {
   padding-right: 0.5rem;
   padding-left: 0.5rem;
   text-align: center;
+}
+
+#acknowledge-alarm-button {
+  margin: 4rem;
+  width: 8rem;
+  height: 8rem;
+  font-size: 4rem;
+}
+
+.modal-content {
+  overflow: hidden !important;
 }
 </style>

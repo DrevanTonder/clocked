@@ -8,6 +8,8 @@ import Buefy from "buefy";
 
 import "@/scss/main.scss";
 
+import "animate.css/animate.min.css";
+
 Vue.use(Buefy);
 
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -16,11 +18,12 @@ import {
   faStopwatch,
   faPlay,
   faStop,
-  faHourglass
+  faHourglass,
+  faCheck
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
-library.add(faClock, faStopwatch, faPlay, faStop, faHourglass);
+library.add(faClock, faStopwatch, faPlay, faStop, faHourglass, faCheck);
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);
 
