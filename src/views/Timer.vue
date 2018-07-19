@@ -74,15 +74,15 @@ export default {
 
   watch: {
     hours() {
-      this.timeLeft = this.getTimeFromInputs();
+      this.getTimeFromInputs();
     },
 
     minutes() {
-      this.timeLeft = this.getTimeFromInputs();
+      this.getTimeFromInputs();
     },
 
     seconds() {
-      this.timeLeft = this.getTimeFromInputs();
+      this.getTimeFromInputs();
     }
   },
 
@@ -91,14 +91,14 @@ export default {
   },
 
   mounted() {
-    this.timeLeft = this.getTimeFromInputs();
+    this.getTimeFromInputs();
   },
 
   methods: {
     start() {
       clearInterval(this.interval);
 
-      this.timeToCountdown = this.getTimeFromInputs();
+      this.timeToCountdown = this.timeLeft;
       this.countdownStart = Date.now() + 1000;
 
       this.interval = setInterval(() => this.update(), 10);
@@ -142,7 +142,7 @@ export default {
       let hours = moment.duration(Number(this.hours), "h");
       let minutes = moment.duration(Number(this.minutes), "m");
       let seconds = moment.duration(Number(this.seconds), "s");
-      return hours
+      this.timeLeft = hours
         .add(minutes)
         .add(seconds)
         .asMilliseconds();
