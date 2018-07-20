@@ -12,8 +12,8 @@ User navigates to stopwatch page. User presses Start button. System starts timer
 #### Timer - User Story
 User navigates to timer page. User selects amount of time to countdown. User presses Start button. System starts countdown. When countdown ends System notifies user until user acknowledges countdown end by pressing anywhere.
 
-#### World Clock - User Story
-User navigates to world clock page. If it is first time System prompts user to select local time zone. System saves this time zone. User can then search, save, remove other time zones. User can also change local time zone.
+#### Timer - Change Alarm Sound
+User will change alarm audio by selecting the default alarm audio or adding a new alarm audio by entering a URL of the new audio. The system will persist all new URLs entered and allow users to remove them.
 
 ### Goals
 
