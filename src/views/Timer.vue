@@ -7,10 +7,10 @@
         </h1>
         <h2 class="subtitle">
           <div class="buttons">
-            <button aria-label="start" role="button" class="button is-large is-rounded is-success" :disabled="running" @click="start()">
+            <button aria-label="Start timer" role="button" class="button is-large is-rounded is-success" :disabled="running" @click="start()">
               <font-awesome-icon icon="play" />
             </button>
-            <button aria-label="reset" role="button" class="button is-large is-rounded is-danger" @click="reset()">
+            <button aria-label="Reset timer" role="button" class="button is-large is-rounded is-danger" @click="reset()">
               Reset
             </button>
           </div>
@@ -35,10 +35,10 @@
       </div>  
     </div>
 
-    <b-modal :active.sync="finished" class="has-text-centered" :on-cancel="() => stopAlarm()">
-        <button id="acknowledge-alarm-button" aria-label="acknowledge alarm" role="button" class="animated rubberBand infinite button is-rounded is-success" @click="stopAlarm()">
-          <font-awesome-icon icon="check" />
-        </button>
+    <b-modal :active.sync="finished" class="has-text-centered" :on-cancel="() => stopAlarm()" scroll="keep"> 
+      <button id="acknowledge-alarm-button" aria-label="acknowledge alarm" role="button" class="animated rubberBand infinite button is-rounded is-success" @click="stopAlarm()">
+        <font-awesome-icon icon="check" />
+      </button>
     </b-modal>
   </div>
 </template>
@@ -124,7 +124,7 @@ export default {
       this.timeToCountdown = null;
       this.countdownStart = null;
 
-      this.timeLeft = this.getTimeFromInputs();
+      this.getTimeFromInputs();
     },
 
     alarmUser() {
