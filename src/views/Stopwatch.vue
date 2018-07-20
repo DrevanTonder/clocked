@@ -13,7 +13,7 @@
             <button aria-label="reset" role="button" class="button is-danger is-large is-rounded" @click="reset()">
               Reset
             </button>
-            <button v-if="running" aria-label="lap" role="button" class="button is-success is-large is-rounded" @click="lap()">
+            <button :disabled="!running" aria-label="lap" role="button" class="button is-success is-large is-rounded" @click="lap()">
               Lap
             </button>
           </div>
@@ -63,10 +63,11 @@ export default {
 
   methods: {
     reset() {
+      this.stop();
+
       this.startTime = null;
       this.elapsedTime = 0;
       this.laps = [];
-      this.stop();
     },
 
     toggle() {
@@ -91,6 +92,8 @@ export default {
     },
 
     stop() {
+      this.lap();
+
       this.toggleIcon = "play";
 
       clearInterval(this.interval);
